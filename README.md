@@ -1,5 +1,5 @@
-# Valgrind Installation Script for 42 School MAC-OS Version.
-
+<h1 align="center">Valgrind Installation Script for 42 School</h1>
+<h2 align="center">MAC-OS Version</h2>
 This repository contains a Bash script designed specifically for students of the 42 School. It simplifies the process of installing Valgrind, a tool for detecting memory leaks and analyzing memory behavior in programs.
 
 ## About the Script
@@ -33,6 +33,10 @@ gcc -Wall -Werror -Wextra -g your_program.c
 This allows for debugging and memory leak detection with Valgrind.
 
 ### Using Valgrind
+## Important Note: 
+If your program is compiled with the address-sanitizer option, do not use Valgrind with this version of your program. 
+Valgrind can conflict with Address Sanitizer (ASan), leading to issues such as the program hanging and potential excessive RAM usage. 
+To use Valgrind, ensure your program is compiled without the Address Sanitizer flag (-fsanitize=address).
 
 To check your program for memory leaks with Valgrind, use the following command:
 ```bash
