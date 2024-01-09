@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Remove existing brew installation
-rm -rf $HOME/.brew
+#rm -rf $HOME/.brew
 
 # Clone brew from GitHub
 git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew
