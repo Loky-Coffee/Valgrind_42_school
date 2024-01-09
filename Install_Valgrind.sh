@@ -45,18 +45,3 @@ else
     echo "Valgrind upgrade failed."
     exit 1
 fi
-
-# Print usage information
-echo "Run:"
-echo "Compiler flags needed:"
-echo "-Wall -Werror -Wextra -g"
-echo "valgrind --leak-check=full ./a.out"
-echo "Possible to give arguments after ./a.out like this!"
-echo "valgrind --leak-check=full ./a.out 1 2 3 \"1 2 3\""
-echo "----------------------------------------------------------"
-echo -e "\e[31mWARNING: If error like this:"
-echo "error: Invalid usage: --HEAD is not supported with HOMEBREW_NO_INSTALL_FROM_API unset! To resolve please run:"
-echo "  export HOMEBREW_NO_INSTALL_FROM_API=1"
-echo "  brew tap Homebrew/core"
-echo "and retry this command."
-echo "YOU CANNOT INSTALL THIS VALGRIND VERSION ON YOUR PC... SORRY!\e[0m"
