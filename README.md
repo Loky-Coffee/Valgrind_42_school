@@ -1,4 +1,3 @@
-# Valgrind_42_school
 <!DOCTYPE html>
 <html lang="en">
 <head>
