@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# Remove existing brew installation
-#rm -rf $HOME/.brew
+# Check if the .brew folder already exists
+if [ -d "$HOME/.brew" ]; then
+    echo "Brew already exists. Updating it."
+else
+    # Clone brew from GitHub if not present
+    git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew
 
-# Clone brew from GitHub
-git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew
+    # Add brew to PATH
+    echo 'export PATH=$HOME/.brew/bin:$PATH' >> $HOME/.zshrc
 
-# Add brew to PATH
-echo 'export PATH=$HOME/.brew/bin:$PATH' >> $HOME/.zshrc
-
-# Source .zshrc to update PATH
-source $HOME/.zshrc
+    # Source .zshrc to update PATH
+    source $HOME/.zshrc
+fi
 
 # Update brew
 brew update
 
 # Check if brew installation was successful
 if [ $? -eq 0 ]; then
-    echo "Brew installed successfully."
+    echo "Brew updated or installed successfully."
 else
-    echo "Brew installation failed."
+    echo "Brew update or installation failed."
     exit 1
 fi
 
@@ -29,7 +31,7 @@ brew install --HEAD LouisBrunner/valgrind/valgrind
 
 # Check if Valgrind installation was successful
 if [ $? -eq 0 ]; then
-    echo "Valgrind installed successfully."
+    echo "Valgrind installed or updated successfully."
 else
     echo "Valgrind installation failed."
     exit 1
