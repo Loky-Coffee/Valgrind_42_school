@@ -18,7 +18,7 @@ This script combines the necessary steps for installing Valgrind on MacOS using 
 To easily install Valgrind using this script, follow these steps:
 
 ```bash
-git clone git@github.com:Loky-Coffee/Valgrind_42_school.git
+https://github.com/Loky-Coffee/Valgrind_42_school.git
 cd Valgrind_42_school
 chmod +x Install_Valgrind.sh
 ./Install_Valgrind.sh
