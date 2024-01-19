@@ -23,7 +23,18 @@ cd Valgrind_42_school
 chmod +x Install_Valgrind.sh
 ./Install_Valgrind.sh
 ```
-The script will guide you through the entire installation process, from removing an existing Homebrew installation to installing and verifying Valgrind.
+### Additional Notes on PATH Settings and Terminal Usage
+Important: After the installation, it is necessary to restart all terminals before using Valgrind.
+This ensures that the new PATH variables are correctly applied.
+This also applies to terminals in Visual Studio Code.
+
+### P.S. Only for Bash Terminal Users:
+The program call works only in ZSH terminals, as the PATH has been extended only in these. 
+If you want to use a Bash terminal, you must also add the PATH to Bash with the following command:
+```bash
+echo 'export PATH=$HOME/.brew/bin:$PATH' >> $HOME/.bashrc
+```
+The script will guide you through the entire installation process, from updating an existing Homebrew installation to installing and verifying Valgrind.
 ### Compilation Options
 
 Ensure you compile your programs with the `-g` flag:
@@ -46,7 +57,7 @@ Replace `./a.out` with your program's executable.
 
 You can also pass arguments to your program after the executable name:
 ```bash
-valgrind --leak-check=full ./a.out 1 2 3 "1 2 3"
+valgrind --leak-check=full ./a.out 123 "1 2 3"
 ```
 
 ### Warning
